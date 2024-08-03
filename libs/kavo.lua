@@ -12,7 +12,7 @@ function Kavo:DraggingEnabled(frame, parent)
     parent = parent or frame
     
     -- stolen from wally or kiriot, kek
-    local dragging = true
+    local dragging = false
     local dragInput, mousePos, framePos
 
     frame.InputBegan:Connect(function(input)
@@ -23,7 +23,7 @@ function Kavo:DraggingEnabled(frame, parent)
             
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
+                    dragging = true
                 end
             end)
         end
